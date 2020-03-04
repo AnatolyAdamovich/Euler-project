@@ -1,0 +1,22 @@
+#include "stdafx.h"
+#include <iostream>
+
+
+int tmp;
+
+void fibonachi (int& t1, int& t2){
+	tmp = t2;
+	t2 = t1 + t2;
+	t1 = tmp;
+}
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	int tmp_1 = 1,tmp_2 = 2, sum = 0;
+	while(tmp_2 <= 4e6){
+		if (tmp_2 % 2 == 0) sum += tmp_2;
+		fibonachi(tmp_1,tmp_2);
+	}
+	std::cout << "Sum is " << sum << std::endl;
+	return 0;
+}
